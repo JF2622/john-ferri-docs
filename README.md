@@ -3,9 +3,19 @@ This is a Docs-as-Code professional portfolio project, incorporating MkDocs, Mar
 
 
 
-```md
 ## Local preview (Windows)
 
 ~~~powershell
-.\scripts\serve_docs.ps1
+powershell -ExecutionPolicy Bypass -File .\scripts\serve_docs.ps1
 ~~~
+
+
+
+## Local preview (WSL / Ubuntu)
+
+~~~bash
+cd /mnt/c/Users/"John Ferri"/projects/john-ferri-docs
+bash scripts/serve_docs.sh
+~~~
+
+> Note: WSL uses a separate virtual environment folder (`.venv-wsl/`) to avoid conflicts with the Windows `.venv/`.
