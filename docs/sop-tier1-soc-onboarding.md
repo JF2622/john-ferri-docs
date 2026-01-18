@@ -14,7 +14,7 @@
 
 **Audience:** 
 
-- Tier 1 Soc Analysts (New Hires)
+- Tier 1 SOC Analysts (New Hires)
 - SOC Team Leads who onboard analysts
 - IT and Identity administrators supporting access requests
 
