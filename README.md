@@ -1,2 +1,11 @@
 ﻿John Ferri - Docs-as-Code Portfolio
 This is a Docs-as-Code professional portfolio project, incorporating MkDocs, Markdown, a Git pull request (PR) workflow, and a page on GitHub Pages.
+
+
+
+```md
+## Local preview (Windows)
+
+~~~powershell
+.\scripts\serve_docs.ps1
+~~~
