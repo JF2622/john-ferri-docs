@@ -90,6 +90,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-bs-level="2"><a href="#escalation-criteria-tier-1-tier-2lead" class="nav-link">Escalation Criteria (Tier 1 → Tier 2/Lead)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-bs-level="2"><a href="#troubleshooting" class="nav-link">Troubleshooting:</a>
               <ul class="nav flex-column">
               </ul>
@@ -174,6 +178,23 @@
 </ul>
 </li>
 </ol>
+<h2 id="escalation-criteria-tier-1-tier-2lead">Escalation Criteria (Tier 1 → Tier 2/Lead)</h2>
+<p>Escalate when any of the following are true:</p>
+<ul>
+<li><strong>High Potential Impact:</strong> privileged accounts, production systems, large user populations, or regulated data</li>
+<li><strong>Credible Signs of Compromise:</strong> valid IOC match, repeated failed logins followed by success, impossible travel, or suspicious MFA behavior</li>
+<li><strong>Persistence or Spread:</strong> repeated alerts for the same entity in a short time window, or multiple related alerts across hosts/users</li>
+<li><strong>Unable to verify benign cause quickly:</strong> after reasonable triage (e.g., 15–30 minutes), you still cannot explain the activity</li>
+<li><strong>Policy Requires Escalation:</strong> severity threshold met, VIP/executive account involved, or “must escalate” playbook category</li>
+</ul>
+<h3 id="what-to-include-in-the-escalation-note">What to Include in the Escalation Note:</h3>
+<ul>
+<li>Alert name/type, timestamp range, and impacted user/host</li>
+<li>What you observed (2–5 bullets)</li>
+<li>What you already checked (logs queried, tickets referenced, change windows)</li>
+<li>Your current assessment (suspected false/true positive and confidence level)</li>
+<li>Recommended next action (containment request, deeper investigation, contact system owner)</li>
+</ul>
 <h2 id="troubleshooting">Troubleshooting:</h2>
 <table>
 <thead>
