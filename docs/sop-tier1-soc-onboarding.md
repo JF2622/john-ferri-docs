@@ -63,7 +63,7 @@ Escalate when any of the following are true:
 - **High Potential Impact:** privileged accounts, production systems, large user populations, or regulated data
 - **Credible Signs of Compromise:** valid IOC match, repeated failed logins followed by success, impossible travel, or suspicious MFA behavior
 - **Persistence or Spread:** repeated alerts for the same entity in a short time window, or multiple related alerts across hosts/users
-- **Unable to verify benign cause quickly:** after reasonable triage (e.g., 15–30 minutes), you still cannot explain the activity
+- **Unable to Verify Benign Cause Quickly:** after reasonable triage (e.g., 15–30 minutes), you still cannot explain the activity
 - **Policy Requires Escalation:** severity threshold met, VIP/executive account involved, or “must escalate” playbook category
 
 
