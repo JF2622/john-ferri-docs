@@ -56,6 +56,24 @@ Before Day 1, confirm the following are completed:
 8. **Document the completion of this process in an onboarding checklist.**
     * *Verification:* Confirm that the checklist is marked complete and that your manager acknowledges it. 
 
+## Escalation Criteria (Tier 1 → Tier 2/Lead)
+
+Escalate when any of the following are true:
+
+- **High Potential Impact:** privileged accounts, production systems, large user populations, or regulated data
+- **Credible Signs of Compromise:** valid IOC match, repeated failed logins followed by success, impossible travel, or suspicious MFA behavior
+- **Persistence or Spread:** repeated alerts for the same entity in a short time window, or multiple related alerts across hosts/users
+- **Unable to verify benign cause quickly:** after reasonable triage (e.g., 15–30 minutes), you still cannot explain the activity
+- **Policy Requires Escalation:** severity threshold met, VIP/executive account involved, or “must escalate” playbook category
+
+
+### What to Include in the Escalation Note:
+- Alert name/type, timestamp range, and impacted user/host
+- What you observed (2–5 bullets)
+- What you already checked (logs queried, tickets referenced, change windows)
+- Your current assessment (suspected false/true positive and confidence level)
+- Recommended next action (containment request, deeper investigation, contact system owner)
+
 
 ## Troubleshooting: 
 
