@@ -3,3 +3,5 @@ site_name: John Ferri - Docs Portfolio
 nav: 
   - Home: index.md
   - SOP: sop-tier1-soc-onboarding.md
+  - Playbooks: 
+      - Suspicious Login: playbook-suspicious-login.md
