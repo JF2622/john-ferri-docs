@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Style Guide - John Ferri - Docs Portfolio</title>
+        <title>MFA Fatigue - John Ferri - Docs Portfolio</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/fontawesome.min.css" rel="stylesheet">
         <link href="../css/brands.min.css" rel="stylesheet">
@@ -41,7 +41,7 @@
                                 <a href="../sop-tier1-soc-onboarding/" class="nav-link">SOP</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Playbooks</a>
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Playbooks</a>
                                 <ul class="dropdown-menu">
                                     
 <li>
@@ -49,12 +49,12 @@
 </li>
                                     
 <li>
-    <a href="../playbook-mfa-fatigue/" class="dropdown-item">MFA Fatigue</a>
+    <a href="./" class="dropdown-item active" aria-current="page">MFA Fatigue</a>
 </li>
                                 </ul>
                             </li>
                             <li class="nav-item">
-                                <a href="./" class="nav-link active" aria-current="page">Style Guide</a>
+                                <a href="../style-guide/" class="nav-link">Style Guide</a>
                             </li>
                         </ul>
 
@@ -65,12 +65,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../playbook-mfa-fatigue/" class="nav-link">
+                                <a rel="prev" href="../playbook-suspicious-login/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" class="nav-link disabled">
+                                <a rel="next" href="../style-guide/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -92,29 +92,45 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="1"><a href="#documentation-style-guide" class="nav-link">Documentation Style Guide</a>
+            <li class="nav-item" data-bs-level="1"><a href="#playbook-mfa-fatigue-push-bombing" class="nav-link">Playbook: MFA Fatigue (Push Bombing)</a>
               <ul class="nav flex-column">
             <li class="nav-item" data-bs-level="2"><a href="#purpose" class="nav-link">Purpose</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#voice-and-tone" class="nav-link">Voice and Tone</a>
+            <li class="nav-item" data-bs-level="2"><a href="#when-to-use" class="nav-link">When to Use</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#audience" class="nav-link">Audience</a>
+            <li class="nav-item" data-bs-level="2"><a href="#required-inputs" class="nav-link">Required Inputs</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#capitalization-and-terms" class="nav-link">Capitalization and Terms</a>
+            <li class="nav-item" data-bs-level="2"><a href="#data-sources-to-check" class="nav-link">Data Sources to Check</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#page-structure-standards" class="nav-link">Page Structure Standards</a>
+            <li class="nav-item" data-bs-level="2"><a href="#triage-steps-tier-1" class="nav-link">Triage Steps (Tier 1)</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#lists-and-formatting-rules" class="nav-link">Lists and Formatting Rules</a>
+            <li class="nav-item" data-bs-level="2"><a href="#recommended-containment-request-via-tier-2lead-per-policy" class="nav-link">Recommended Containment (Request via Tier 2/Lead per policy)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#common-false-positives" class="nav-link">Common False Positives</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#escalation-criteria" class="nav-link">Escalation Criteria</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#ticket-note-template-copypaste" class="nav-link">Ticket Note Template (copy/paste)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#definition-of-done" class="nav-link">Definition of Done</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -125,62 +141,106 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="documentation-style-guide">Documentation Style Guide</h1>
+<h1 id="playbook-mfa-fatigue-push-bombing">Playbook: MFA Fatigue (Push Bombing)</h1>
 <h2 id="purpose">Purpose</h2>
-<p>This guide defines writing and formatting standards for this documentation set, so that pages remain consistent, scannable, and easy to maintain.</p>
-<h2 id="voice-and-tone">Voice and Tone</h2>
+<p>Help Tier 1 analysts triage alerts or user reports involving repeated MFA prompts and suspected “push bombing” attempts, and then determine when to escalate and/or request containment actions.</p>
+<h2 id="when-to-use">When to Use</h2>
 <ul>
-<li>Use <strong>imperative, action-oriented</strong> steps (e.g., “Open the IdP logs,” “Verify MFA outcome”).</li>
-<li>Prefer <strong>plain language</strong> over jargon. Define acronyms on first use.</li>
-<li>Be <strong>concise:</strong> short sentences, short paragraphs</li>
-<li>Use <strong>consistent terminology</strong> (see Capitalization and Terms).</li>
+<li>User reports repeated MFA prompts that they did not initiate.</li>
+<li>IdP alert: multiple MFA challenges, unusual MFA failures, or high-risk sign-in with MFA anomalies</li>
+<li>SIEM alert: suspicious authentication patterns tied to MFA outcomes</li>
 </ul>
-<h2 id="audience">Audience</h2>
-<p>Primary: Tier 1 SOC analysts (new hires)<br />
-Secondary: Tier 2/Lead analysts who receive escalations</p>
-<h2 id="capitalization-and-terms">Capitalization and Terms</h2>
-<p>Use these consistently:
-- <strong>SOC</strong>, <strong>SIEM</strong>, <strong>SOAR</strong>, <strong>EDR</strong>, <strong>MFA</strong>, <strong>IdP</strong>
-- <strong>Tier 1</strong>, <strong>Tier 2</strong> (not “tier-1” unless required by a system)
-- <strong>Playbook</strong> (page type), <strong>SOP</strong> (standard operating procedure)</p>
-<p>If you introduce a new acronym, then please spell it out once:
-- Example: “Identity provider (IdP)”</p>
-<h2 id="page-structure-standards">Page Structure Standards</h2>
-<h3 id="sop-pages-should-include">SOP pages should include</h3>
+<h2 id="required-inputs">Required Inputs</h2>
 <ul>
-<li>Purpose</li>
-<li>Scope</li>
-<li>Prerequisites</li>
-<li>Procedure / Workflow</li>
-<li>Escalation Criteria</li>
-<li>Troubleshooting</li>
-<li>Glossary</li>
-<li>Definition of Done (optional but recommended)</li>
+<li>Username / UPN</li>
+<li>Timestamp range (UTC and local)</li>
+<li>Source IP(s) and geolocation</li>
+<li>Device / user agent (if available)</li>
+<li>MFA method (push, SMS, TOTP, phone call)</li>
+<li>IdP platform involved (e.g., Azure AD / Okta)</li>
 </ul>
-<h3 id="playbooks-should-include">Playbooks should include</h3>
+<h2 id="data-sources-to-check">Data Sources to Check</h2>
 <ul>
-<li>Purpose</li>
-<li>When to Use</li>
-<li>Required Inputs</li>
-<li>Data Sources to Check</li>
-<li>Triage Steps (Tier 1)</li>
-<li>Common False Positives</li>
-<li>Escalation Criteria (link back to SOP)</li>
-<li>Ticket Note Template</li>
-<li>Definition of Done</li>
+<li>IdP sign-in logs (risk flags, MFA outcomes, device context)</li>
+<li>MFA provider logs (challenge counts, approvals/denials/timeouts)</li>
+<li>VPN logs (if applicable)</li>
+<li>EDR/endpoint context (if device compromise suspected)</li>
+<li>Ticketing system (recent access issues, password resets, travel notices)</li>
 </ul>
-<h2 id="lists-and-formatting-rules">Lists and Formatting Rules</h2>
-<h3 id="numbered-steps">Numbered steps</h3>
+<h2 id="triage-steps-tier-1">Triage Steps (Tier 1)</h2>
+<ol>
+<li>Confirm the report/alert details (user, time range, MFA method, volume of prompts).</li>
+<li>Determine whether the user <strong>approved any</strong> unexpected MFA prompt.</li>
+<li>Review sign-in pattern:<ul>
+<li>failed attempts count</li>
+<li>success after failures</li>
+<li>MFA outcomes (approved/denied/timed out)</li>
+</ul>
+</li>
+<li>Validate source context:<ul>
+<li>unfamiliar IP/geo?</li>
+<li>known corporate/VPN egress?</li>
+<li>unusual user agent/device?</li>
+</ul>
+</li>
+<li>Check for “impossible travel” or concurrent sessions across locations/devices.</li>
+<li>Check account privilege and sensitivity (admin/VIP/critical systems).</li>
+<li>If the user approved an unexpected prompt, treat as <strong>high-confidence compromise</strong>.</li>
+<li>If repeated prompts occurred without approval:<ul>
+<li>treat as <strong>attempted compromise</strong> (credential stuffing + MFA fatigue)</li>
+</ul>
+</li>
+<li>Collect evidence for escalation and recommended containment steps.</li>
+<li>Document actions and evidence in the ticket using the template below.</li>
+</ol>
+<h2 id="recommended-containment-request-via-tier-2lead-per-policy">Recommended Containment (Request via Tier 2/Lead per policy)</h2>
 <ul>
-<li>Use numbered lists for procedures.</li>
-<li>Keep list items short and parallel in structure.</li>
-<li>Avoid random blank lines in lists.</li>
-<li>If a step contains sub-bullets, indent them <strong>4 spaces</strong>:</li>
+<li>Force password reset</li>
+<li>Revoke active sessions / refresh tokens</li>
+<li>Require re-registration of MFA (if supported)</li>
+<li>Block source IP / apply conditional access policy (location/device)</li>
+<li>Temporarily disable account if compromise is likely and policy allows</li>
 </ul>
-<p>```md
-3. Example step:
-    - Sub-bullet A
-    - Sub-bullet B</p></div>
+<h2 id="common-false-positives">Common False Positives</h2>
+<ul>
+<li>User accidentally triggering repeated prompts (multiple login attempts)</li>
+<li>MFA app sync issues or delayed push notifications</li>
+<li>Legitimate sign-ins from VPN causing unusual geo</li>
+<li>Device reauthentication loops (SSO token refresh)</li>
+</ul>
+<h2 id="escalation-criteria">Escalation Criteria</h2>
+<ul>
+<li>Escalate if any apply:<ul>
+<li>User approved an unexpected prompt.</li>
+<li>Privileged/VIP account involved</li>
+<li>Success after repeated failures from unfamiliar IP/geo</li>
+<li>High volume of prompts in a short time window</li>
+<li>You cannot confidently explain activity after initial checks.</li>
+</ul>
+</li>
+</ul>
+<p>(Reference: SOP “Escalation Criteria (Tier 1 → Tier 2/Lead)”)</p>
+<h2 id="ticket-note-template-copypaste">Ticket Note Template (copy/paste)</h2>
+<p><strong>Alert / Report:</strong><br />
+<strong>User:</strong><br />
+<strong>Time Range:</strong><br />
+<strong>MFA Method:</strong><br />
+<strong>Source IP / Geo:</strong><br />
+<strong>Device / User Agent:</strong><br />
+<strong>IdP Outcome (MFA):</strong><br />
+<strong>What I Checked:</strong><br />
+-<br />
+-<br />
+<strong>Findings:</strong><br />
+-<br />
+-<br />
+<strong>Assessment (TP/FP and confidence level):</strong><br />
+<strong>Recommended Containment / Escalation:</strong>  </p>
+<h2 id="definition-of-done">Definition of Done</h2>
+<ul>
+<li>Ticket includes alert/report details, evidence checked, and final disposition.</li>
+<li>If escalated: Tier 2 has enough context to take action without repeating Tier 1 work.</li>
+</ul></div>
             </div>
         </div>
 
