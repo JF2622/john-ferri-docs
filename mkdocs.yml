@@ -5,4 +5,5 @@ nav:
   - SOP: sop-tier1-soc-onboarding.md
   - Playbooks: 
       - Suspicious Login: playbook-suspicious-login.md
+      - MFA Fatigue: playbook-mfa-fatigue.md
   - Style Guide: style-guide.md
