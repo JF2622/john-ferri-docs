@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Suspicious Login - John Ferri - Docs Portfolio</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">John Ferri - Docs Portfolio</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../sop-tier1-soc-onboarding/" class="nav-link">SOP</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Playbooks</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Suspicious Login</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../sop-tier1-soc-onboarding/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" class="nav-link disabled">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#playbook-suspicious-logins-and-impossible-travel" class="nav-link">Playbook: Suspicious Logins and Impossible Travel</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#purpose" class="nav-link">Purpose</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#when-to-use" class="nav-link">When to Use</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#required-inputs" class="nav-link">Required Inputs</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#data-sources-to-check" class="nav-link">Data Sources to Check</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#triage-steps-tier-1" class="nav-link">Triage Steps (Tier 1)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#common-false-positives" class="nav-link">Common False Positives</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#escalation-criteria" class="nav-link">Escalation Criteria</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#ticket-note-template-copypaste" class="nav-link">Ticket Note Template (copy/paste)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#definition-of-done" class="nav-link">Definition of Done</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="playbook-suspicious-logins-and-impossible-travel">Playbook: Suspicious Logins and Impossible Travel</h1>
+<h2 id="purpose">Purpose</h2>
+<p>This playbook serves to help Tier 1 analysts quickly validate and respond to alerts indicating suspicious authentication activity (e.g., impossible travel, an unfamiliar location or device, and/or abnormal login patterns).</p>
+<h2 id="when-to-use">When to Use</h2>
+<ul>
+<li><strong>SIEM Alert:</strong> Impossible travel or geo-velocity</li>
+<li><strong>IdP Alert:</strong> Risky sign-in or unfamiliar location</li>
+<li><strong>User Report:</strong> “I received an MFA prompt that I did not approve.”</li>
+<li>Multiple failed logins followed by a success</li>
+</ul>
+<h2 id="required-inputs">Required Inputs</h2>
+<ul>
+<li>Username or UPN</li>
+<li>Timestamp Range (UTC and Local)</li>
+<li>Source IP(s)</li>
+<li>Location (Geo)</li>
+<li>User Agent / Device Info (if available)</li>
+<li>IdP / VPN / Email Platform Involved (Okta/Azure AD/etc.)</li>
+</ul>
+<h2 id="data-sources-to-check">Data Sources to Check</h2>
+<ul>
+<li>IdP Sign-in Logs (risk events, MFA outcomes)</li>
+<li>VPN Logs (if remote access is in scope)</li>
+<li>Endpoint/EDR (if device compromise is suspected)</li>
+<li>Email Logs (if session hijack/phishing is suspected)</li>
+<li>Ticketing System (recent access requests / travel notices / change windows)</li>
+</ul>
+<h2 id="triage-steps-tier-1">Triage Steps (Tier 1)</h2>
+<ol>
+<li>Confirm the alert details (user, IP, geo, time, device).</li>
+<li>Check if the source IP is known/benign (corporate egress, VPN, ISP, known vendor).</li>
+<li>Review sign-in pattern:<ul>
+<li>Failed attempts count</li>
+<li>Success after failures</li>
+<li>MFA result (approved/denied/timed out)</li>
+</ul>
+</li>
+<li>Look for concurrent sign-ins from different geos/devices in a short window.</li>
+<li>Check if the user is traveling or on PTO (ticket notes, travel notice, manager note if available).</li>
+<li>Validate device context (known device? new device registration? unusual user agent?).</li>
+<li>Assess account privilege (admin role, sensitive systems, VIP status).</li>
+<li>If the user reported unexpected MFA, treat that event as higher-confidence suspicious activity.</li>
+<li>If evidence suggests compromise, prepare an escalation with key facts (see Escalation Criteria in the SOP).</li>
+<li>Document actions and evidence in the ticket.</li>
+</ol>
+<h2 id="common-false-positives">Common False Positives</h2>
+<ul>
+<li>Mobile carrier IP geolocation inaccuracies</li>
+<li>Corporate VPN/Proxy egress showing the “wrong” location</li>
+<li>Travel or remote work</li>
+<li>Password manager or background re-authentication (tokens refreshing)</li>
+</ul>
+<h2 id="escalation-criteria">Escalation Criteria</h2>
+<ul>
+<li>Escalate if any of the following apply:<ul>
+<li>Privileged/VIP account</li>
+<li>MFA approved unexpectedly or “push fatigue” suspected</li>
+<li>Success after repeated failures from unfamiliar IP/geo</li>
+<li>Multiple geos/devices concurrently</li>
+<li>You cannot confidently explain the activity after initial checks.</li>
+</ul>
+</li>
+</ul>
+<p>(Reference: SOP “Escalation Criteria (Tier 1 → Tier 2/Lead)”)</p>
+<h2 id="ticket-note-template-copypaste">Ticket Note Template (copy/paste)</h2>
+<p><strong>Alert:</strong><br />
+<strong>User:</strong><br />
+<strong>Time Range:</strong><br />
+<strong>Source IP / Geo:</strong><br />
+<strong>Device / User Agent:</strong><br />
+<strong>IdP Outcome (MFA):</strong><br />
+<strong>What I Checked:</strong><br />
+-<br />
+-<br />
+<strong>Findings:</strong><br />
+-<br />
+-<br />
+<strong>Assessment (TP/FP + confidence level):</strong><br />
+<strong>Recommended Next Action / Escalation:</strong>  </p>
+<h2 id="definition-of-done">Definition of Done</h2>
+<ul>
+<li><strong>Ticket Includes:</strong> alert details, checks performed, evidence summary, and final disposition (closed as FP, contained/escalated).</li>
+<li><strong>If Escalated:</strong> Tier 2 has the minimum required context to continue the investigation without rework.</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
