@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Suspicious Login - John Ferri - Docs Portfolio</title>
+        <title>Style Guide - John Ferri - Docs Portfolio</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/fontawesome.min.css" rel="stylesheet">
         <link href="../css/brands.min.css" rel="stylesheet">
@@ -41,16 +41,16 @@
                                 <a href="../sop-tier1-soc-onboarding/" class="nav-link">SOP</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Playbooks</a>
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Playbooks</a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="./" class="dropdown-item active" aria-current="page">Suspicious Login</a>
+    <a href="../playbook-suspicious-login/" class="dropdown-item">Suspicious Login</a>
 </li>
                                 </ul>
                             </li>
                             <li class="nav-item">
-                                <a href="../style-guide/" class="nav-link">Style Guide</a>
+                                <a href="./" class="nav-link active" aria-current="page">Style Guide</a>
                             </li>
                         </ul>
 
@@ -61,12 +61,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../sop-tier1-soc-onboarding/" class="nav-link">
+                                <a rel="prev" href="../playbook-suspicious-login/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../style-guide/" class="nav-link">
+                                <a rel="next" class="nav-link disabled">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -88,41 +88,29 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="1"><a href="#playbook-suspicious-logins-and-impossible-travel" class="nav-link">Playbook: Suspicious Logins and Impossible Travel</a>
+            <li class="nav-item" data-bs-level="1"><a href="#documentation-style-guide" class="nav-link">Documentation Style Guide</a>
               <ul class="nav flex-column">
             <li class="nav-item" data-bs-level="2"><a href="#purpose" class="nav-link">Purpose</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#when-to-use" class="nav-link">When to Use</a>
+            <li class="nav-item" data-bs-level="2"><a href="#voice-and-tone" class="nav-link">Voice and Tone</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#required-inputs" class="nav-link">Required Inputs</a>
+            <li class="nav-item" data-bs-level="2"><a href="#audience" class="nav-link">Audience</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#data-sources-to-check" class="nav-link">Data Sources to Check</a>
+            <li class="nav-item" data-bs-level="2"><a href="#capitalization-and-terms" class="nav-link">Capitalization and Terms</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#triage-steps-tier-1" class="nav-link">Triage Steps (Tier 1)</a>
+            <li class="nav-item" data-bs-level="2"><a href="#page-structure-standards" class="nav-link">Page Structure Standards</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#common-false-positives" class="nav-link">Common False Positives</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="2"><a href="#escalation-criteria" class="nav-link">Escalation Criteria</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="2"><a href="#ticket-note-template-copypaste" class="nav-link">Ticket Note Template (copy/paste)</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="2"><a href="#definition-of-done" class="nav-link">Definition of Done</a>
+            <li class="nav-item" data-bs-level="2"><a href="#lists-and-formatting-rules" class="nav-link">Lists and Formatting Rules</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -133,90 +121,62 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="playbook-suspicious-logins-and-impossible-travel">Playbook: Suspicious Logins and Impossible Travel</h1>
+<h1 id="documentation-style-guide">Documentation Style Guide</h1>
 <h2 id="purpose">Purpose</h2>
-<p>This playbook serves to help Tier 1 analysts quickly validate and respond to alerts indicating suspicious authentication activity (e.g., impossible travel, an unfamiliar location or device, and/or abnormal login patterns).</p>
-<h2 id="when-to-use">When to Use</h2>
+<p>This guide defines writing and formatting standards for this documentation set, so that pages remain consistent, scannable, and easy to maintain.</p>
+<h2 id="voice-and-tone">Voice and Tone</h2>
 <ul>
-<li><strong>SIEM Alert:</strong> Impossible travel or geo-velocity</li>
-<li><strong>IdP Alert:</strong> Risky sign-in or unfamiliar location</li>
-<li><strong>User Report:</strong> “I received an MFA prompt that I did not approve.”</li>
-<li>Multiple failed logins followed by a success</li>
+<li>Use <strong>imperative, action-oriented</strong> steps (e.g., “Open the IdP logs,” “Verify MFA outcome”).</li>
+<li>Prefer <strong>plain language</strong> over jargon. Define acronyms on first use.</li>
+<li>Be <strong>concise:</strong> short sentences, short paragraphs</li>
+<li>Use <strong>consistent terminology</strong> (see Capitalization and Terms).</li>
 </ul>
-<h2 id="required-inputs">Required Inputs</h2>
+<h2 id="audience">Audience</h2>
+<p>Primary: Tier 1 SOC analysts (new hires)<br />
+Secondary: Tier 2/Lead analysts who receive escalations</p>
+<h2 id="capitalization-and-terms">Capitalization and Terms</h2>
+<p>Use these consistently:
+- <strong>SOC</strong>, <strong>SIEM</strong>, <strong>SOAR</strong>, <strong>EDR</strong>, <strong>MFA</strong>, <strong>IdP</strong>
+- <strong>Tier 1</strong>, <strong>Tier 2</strong> (not “tier-1” unless required by a system)
+- <strong>Playbook</strong> (page type), <strong>SOP</strong> (standard operating procedure)</p>
+<p>If you introduce a new acronym, then please spell it out once:
+- Example: “Identity provider (IdP)”</p>
+<h2 id="page-structure-standards">Page Structure Standards</h2>
+<h3 id="sop-pages-should-include">SOP pages should include</h3>
 <ul>
-<li>Username or UPN</li>
-<li>Timestamp Range (UTC and Local)</li>
-<li>Source IP(s)</li>
-<li>Location (Geo)</li>
-<li>User Agent / Device Info (if available)</li>
-<li>IdP / VPN / Email Platform Involved (Okta/Azure AD/etc.)</li>
+<li>Purpose</li>
+<li>Scope</li>
+<li>Prerequisites</li>
+<li>Procedure / Workflow</li>
+<li>Escalation Criteria</li>
+<li>Troubleshooting</li>
+<li>Glossary</li>
+<li>Definition of Done (optional but recommended)</li>
 </ul>
-<h2 id="data-sources-to-check">Data Sources to Check</h2>
+<h3 id="playbooks-should-include">Playbooks should include</h3>
 <ul>
-<li>IdP Sign-in Logs (risk events, MFA outcomes)</li>
-<li>VPN Logs (if remote access is in scope)</li>
-<li>Endpoint/EDR (if device compromise is suspected)</li>
-<li>Email Logs (if session hijack/phishing is suspected)</li>
-<li>Ticketing System (recent access requests / travel notices / change windows)</li>
+<li>Purpose</li>
+<li>When to Use</li>
+<li>Required Inputs</li>
+<li>Data Sources to Check</li>
+<li>Triage Steps (Tier 1)</li>
+<li>Common False Positives</li>
+<li>Escalation Criteria (link back to SOP)</li>
+<li>Ticket Note Template</li>
+<li>Definition of Done</li>
 </ul>
-<h2 id="triage-steps-tier-1">Triage Steps (Tier 1)</h2>
-<ol>
-<li>Confirm the alert details (user, IP, geo, time, device).</li>
-<li>Check if the source IP is known/benign (corporate egress, VPN, ISP, known vendor).</li>
-<li>Review sign-in pattern:<ul>
-<li>Failed attempts count</li>
-<li>Success after failures</li>
-<li>MFA result (approved/denied/timed out)</li>
-</ul>
-</li>
-<li>Look for concurrent sign-ins from different geos/devices in a short window.</li>
-<li>Check if the user is traveling or on PTO (ticket notes, travel notice, manager note if available).</li>
-<li>Validate device context (known device? new device registration? unusual user agent?).</li>
-<li>Assess account privilege (admin role, sensitive systems, VIP status).</li>
-<li>If the user reported unexpected MFA, treat that event as higher-confidence suspicious activity.</li>
-<li>If evidence suggests compromise, prepare an escalation with key facts (see Escalation Criteria in the SOP).</li>
-<li>Document actions and evidence in the ticket.</li>
-</ol>
-<h2 id="common-false-positives">Common False Positives</h2>
+<h2 id="lists-and-formatting-rules">Lists and Formatting Rules</h2>
+<h3 id="numbered-steps">Numbered steps</h3>
 <ul>
-<li>Mobile carrier IP geolocation inaccuracies</li>
-<li>Corporate VPN/Proxy egress showing the “wrong” location</li>
-<li>Travel or remote work</li>
-<li>Password manager or background re-authentication (tokens refreshing)</li>
+<li>Use numbered lists for procedures.</li>
+<li>Keep list items short and parallel in structure.</li>
+<li>Avoid random blank lines in lists.</li>
+<li>If a step contains sub-bullets, indent them <strong>4 spaces</strong>:</li>
 </ul>
-<h2 id="escalation-criteria">Escalation Criteria</h2>
-<ul>
-<li>Escalate if any of the following apply:<ul>
-<li>Privileged/VIP account</li>
-<li>MFA approved unexpectedly or “push fatigue” suspected</li>
-<li>Success after repeated failures from unfamiliar IP/geo</li>
-<li>Multiple geos/devices concurrently</li>
-<li>You cannot confidently explain the activity after initial checks.</li>
-</ul>
-</li>
-</ul>
-<p>(Reference: SOP “Escalation Criteria (Tier 1 → Tier 2/Lead)”)</p>
-<h2 id="ticket-note-template-copypaste">Ticket Note Template (copy/paste)</h2>
-<p><strong>Alert:</strong><br />
-<strong>User:</strong><br />
-<strong>Time Range:</strong><br />
-<strong>Source IP / Geo:</strong><br />
-<strong>Device / User Agent:</strong><br />
-<strong>IdP Outcome (MFA):</strong><br />
-<strong>What I Checked:</strong><br />
--<br />
--<br />
-<strong>Findings:</strong><br />
--<br />
--<br />
-<strong>Assessment (TP/FP + confidence level):</strong><br />
-<strong>Recommended Next Action / Escalation:</strong>  </p>
-<h2 id="definition-of-done">Definition of Done</h2>
-<ul>
-<li><strong>Ticket Includes:</strong> alert details, checks performed, evidence summary, and final disposition (closed as FP, contained/escalated).</li>
-<li><strong>If Escalated:</strong> Tier 2 has the minimum required context to continue the investigation without rework.</li>
-</ul></div>
+<p>```md
+3. Example step:
+    - Sub-bullet A
+    - Sub-bullet B</p></div>
             </div>
         </div>
 
