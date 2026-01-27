@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Query Examples - John Ferri - Docs Portfolio</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">John Ferri - Docs Portfolio</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../sop-tier1-soc-onboarding/" class="nav-link">SOP</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Playbooks</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../playbook-suspicious-login/" class="dropdown-item">Suspicious Login</a>
+</li>
+                                    
+<li>
+    <a href="../playbook-mfa-fatigue/" class="dropdown-item">MFA Fatigue</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../style-guide/" class="nav-link">Style Guide</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Examples</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../ticket-note-examples/" class="dropdown-item">Ticket Note Examples</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Query Examples</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../ticket-note-examples/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" class="nav-link disabled">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#query-examples-pseudo-queries-for-tier-1-soc" class="nav-link">Query Examples (Pseudo-Queries for Tier 1 SOC)</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#purpose" class="nav-link">Purpose</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#conventions" class="nav-link">Conventions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#quick-filters-reusable" class="nav-link">Quick Filters (Reusable)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#scenario-1-suspicious-login-impossible-travel" class="nav-link">Scenario 1 — Suspicious Login / Impossible Travel</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#scenario-2-mfa-fatigue-push-bombing" class="nav-link">Scenario 2 - MFA Fatigue (Push Bombing)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#scenario-3-password-spray-indicators-many-users-one-ip" class="nav-link">Scenario 3 - Password Spray Indicators (Many Users, One IP)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#scenario-4-new-devicenew-user-agent" class="nav-link">Scenario 4 - New Device/New User Agent</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#scenario-5-vpn-vs-non-vpn-context-if-applicable" class="nav-link">Scenario 5 - VPN vs. Non-VPN Context (if Applicable)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#escalation-evidence-checklist-what-to-include-with-query-output" class="nav-link">Escalation Evidence Checklist (What to Include with Query Output)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="query-examples-pseudo-queries-for-tier-1-soc">Query Examples (Pseudo-Queries for Tier 1 SOC)</h1>
+<h2 id="purpose">Purpose</h2>
+<p>Provide tool-agnostic examples of how a Tier 1 analyst can quickly validate common authentication and alert scenarios using log searches. These are written as <strong>pseudo-queries</strong> with light examples to translate into your environment (SIEM, IdP logs, EDR, etc.).</p>
+<h2 id="conventions">Conventions</h2>
+<ul>
+<li><code>AUTH_LOGS</code> = identity provider / authentication event source (IdP sign-ins, SSO logs)</li>
+<li><code>MFA_LOGS</code> = MFA challenge/verification events (push/SMS/TOTP outcomes)</li>
+<li><code>VPN_LOGS</code> = remote access logs (if applicable)</li>
+<li><code>timestamp</code> fields may differ by platform (e.g., <code>TimeGenerated</code>, <code>@timestamp</code>)</li>
+<li>Replace <code>user</code>, <code>src_ip</code>, <code>geo</code>, <code>device_id</code>, <code>user_agent</code> with your schema</li>
+</ul>
+<h2 id="quick-filters-reusable">Quick Filters (Reusable)</h2>
+<ul>
+<li><strong>User filter:</strong> <code>user == "jdoe@example.com"</code></li>
+<li><strong>Time range:</strong> <code>timestamp between (T-1h, T)</code></li>
+<li><strong>Success/Failure:</strong> <code>result in ("success","failure")</code></li>
+<li><strong>MFA outcome:</strong> <code>mfa_result in ("approved","denied","timeout")</code></li>
+</ul>
+<hr />
+<h2 id="scenario-1-suspicious-login-impossible-travel">Scenario 1 — Suspicious Login / Impossible Travel</h2>
+<h3 id="1a-find-all-sign-ins-for-a-user-last-24-hours">1A) Find all sign-ins for a user (last 24 hours)</h3>
+<p><strong>Goal:</strong> establish baseline activity and identify anomalies.</p>
+<pre><code class="language-text">FROM AUTH_LOGS
+WHERE user == &quot;&lt;USER&gt;&quot;
+  AND timestamp &gt;= now() - 24h
+SELECT timestamp, result, src_ip, geo_country, geo_city, device_id, user_agent, risk_level
+ORDER BY timestamp DESC
+</code></pre>
+<h3 id="1b-detect-concurrent-sign-ins-for-a-user-last-24-hours">1B) Detect concurrent sign-ins for a user (last 24 hours)</h3>
+<p><strong>Goal:</strong> Identify "impossible travel" patterns. </p>
+<pre><code class="language-text">FROM AUTH_LOGS
+WHERE user == &quot;&lt;USER&gt;&quot;
+  AND timestamp &gt;= now() - 24h
+GROUP BY user, device_id
+WINDOW 10m
+CALCULATE distinct(geo_country), distinct(src_ip)
+WHERE distinct(geo_country) &gt;= 2 OR distinct(src_ip) &gt;= 2
+</code></pre>
+<h3 id="1c-success-after-repeated-failures-credential-guessing">1C) Success after repeated failures (credential guessing)</h3>
+<p><strong>Goal:</strong> See whether a brute-force or spray led to a successful login. </p>
+<pre><code class="language-text">FROM AUTH_LOGS
+WHERE user == &quot;&lt;USER&gt;&quot;
+  AND timestamp &gt;= now() - 24h
+GROUP BY user
+WINDOW 30m
+CALCULATE count_if(result==&quot;failure&quot;), count_if(result==&quot;success&quot;)
+WHERE count_if(result==&quot;failure&quot;) &gt;= 10 AND count_if(result==&quot;success&quot;) &gt;= 1
+</code></pre>
+<h2 id="scenario-2-mfa-fatigue-push-bombing">Scenario 2 - MFA Fatigue (Push Bombing)</h2>
+<h3 id="2a-count-mfa-challenges-for-a-user-15-minute-time-window">2A) Count MFA Challenges for a User (15-Minute Time Window)</h3>
+<p><strong>Goal:</strong> Confirm prompt volume and outcomes. </p>
+<pre><code class="language-text">FROM MFA_LOGS
+WHERE user == &quot;&lt;USER&gt;&quot;
+  AND timestamp &gt;= now() - 2h
+GROUP BY user
+WINDOW 15m
+CALCULATE count(*), count_if(mfa_result==&quot;approved&quot;), count_if(mfa_result==&quot;denied&quot;), count_if(mfa_result==&quot;timeout&quot;)
+WHERE count(*) &gt;= 5
+</code></pre>
+<h3 id="2b-identify-top-users-by-mfa-prompt-volume-triage-queue-support">2B) Identify top users by MFA prompt volume (triage queue support)</h3>
+<p><strong>Goal:</strong> Quickly find the noisiest and/or highest-risk cases.</p>
+<pre><code class="language-text">FROM MFA_LOGS
+WHERE timestamp &gt;= now() - 1h
+GROUP BY user
+CALCULATE count(*) AS mfa_prompts
+ORDER BY mfa_prompts DESC
+LIMIT 20
+
+</code></pre>
+<h3 id="2c-mfa-fatigue-and-suspicious-sign-in-correlation">2C) MFA Fatigue and Suspicious Sign-In Correlation</h3>
+<p><strong>Goal:</strong> Tie prompts to sign-in attempts and determine whether success occurred. </p>
+<pre><code class="language-text">JOIN AUTH_LOGS AS a WITH MFA_LOGS AS m
+ON a.user == m.user
+AND abs(a.timestamp - m.timestamp) &lt;= 5m
+WHERE a.user == &quot;&lt;USER&gt;&quot;
+  AND a.timestamp &gt;= now() - 24h
+SELECT a.timestamp, a.result, a.src_ip, a.geo, m.mfa_result, a.device_id
+ORDER BY a.timestamp DESC
+</code></pre>
+<h2 id="scenario-3-password-spray-indicators-many-users-one-ip">Scenario 3 - Password Spray Indicators (Many Users, One IP)</h2>
+<h3 id="3a-identify-ips-failing-across-many-usernames-last-60-minutes">3A) Identify IPs failing across many usernames (last 60 minutes)</h3>
+<p><strong>Goal:</strong> Spot spray sources early. </p>
+<pre><code class="language-text">JOIN AUTH_LOGS AS a WITH MFA_LOGS AS m
+ON a.user == m.user
+AND abs(a.timestamp - m.timestamp) &lt;= 5m
+WHERE a.user == &quot;&lt;USER&gt;&quot;
+  AND a.timestamp &gt;= now() - 24h
+SELECT a.timestamp, a.result, a.src_ip, a.geo, m.mfa_result, a.device_id
+ORDER BY a.timestamp DESC
+</code></pre>
+<h3 id="3b-identify-targeted-users-for-a-suspected-spray-ip">3B) Identify targeted users for a suspected spray IP</h3>
+<p><strong>Goal:</strong> Support blocking/escalation decisions.</p>
+<pre><code class="language-text">FROM AUTH_LOGS
+WHERE timestamp &gt;= now() - 60m
+  AND result == &quot;failure&quot;
+GROUP BY src_ip
+CALCULATE distinct(user) AS unique_users, count(*) AS failures
+WHERE unique_users &gt;= 10 OR failures &gt;= 50
+ORDER BY unique_users DESC, failures DESC
+</code></pre>
+<h2 id="scenario-4-new-devicenew-user-agent">Scenario 4 - New Device/New User Agent</h2>
+<h3 id="4a-identify-new-device-events-for-a-user-last-30-days">4A) Identify "new device" events for a user (last 30 days)</h3>
+<p><strong>Goal:</strong> Determine whether the device is genuinely new.</p>
+<pre><code class="language-text">FROM AUTH_LOGS
+WHERE user == &quot;&lt;USER&gt;&quot;
+  AND timestamp &gt;= now() - 30d
+GROUP BY device_id
+CALCULATE min(timestamp) AS first_seen, max(timestamp) AS last_seen, count(*) AS signins
+ORDER BY first_seen DESC
+</code></pre>
+<h3 id="4b-find-first-seen-user-agent-strings">4B) Find first-seen user agent strings</h3>
+<p><strong>Goal:</strong> Spot new browsers/automation frameworks.</p>
+<pre><code class="language-text">FROM AUTH_LOGS
+WHERE user == &quot;&lt;USER&gt;&quot;
+  AND timestamp &gt;= now() - 30d
+GROUP BY user_agent
+CALCULATE min(timestamp) AS first_seen, count(*) AS events
+ORDER BY first_seen DESC
+</code></pre>
+<h2 id="scenario-5-vpn-vs-non-vpn-context-if-applicable">Scenario 5 - VPN vs. Non-VPN Context (if Applicable)</h2>
+<h3 id="5a-determine-whether-a-suspicious-sign-in-aligns-with-a-vpn-connection">5A) Determine whether a suspicious sign-in aligns with a VPN connection</h3>
+<p><strong>Goal:</strong> Reduce false positives when corporate egress is involved. </p>
+<pre><code class="language-text">JOIN AUTH_LOGS AS a WITH VPN_LOGS AS v
+ON a.user == v.user
+AND abs(a.timestamp - v.timestamp) &lt;= 10m
+WHERE a.user == &quot;&lt;USER&gt;&quot;
+  AND a.timestamp &gt;= now() - 24h
+SELECT a.timestamp, a.src_ip, a.geo, v.vpn_gateway, v.vpn_src_ip
+ORDER BY a.timestamp DESC
+</code></pre>
+<h2 id="escalation-evidence-checklist-what-to-include-with-query-output">Escalation Evidence Checklist (What to Include with Query Output)</h2>
+<h3 id="when-escalating-capture">When escalating, capture:</h3>
+<ul>
+<li>Query name/purpose</li>
+<li>Time range used</li>
+<li>Key rows (timestamps, IPs, geo, device/user-agent, outcomes)</li>
+<li>Counts (failures, MFA prompts, distinct users)</li>
+<li>Interpretation (what it likely indicates, plus the confidence level)</li>
+</ul>
+<p>(References: SOP Escalation Criteria and the Ticket Note Examples)</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
