@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Suspicious Login - John Ferri - Docs Portfolio</title>
+        <title>Ticket Note Examples - John Ferri - Docs Portfolio</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/fontawesome.min.css" rel="stylesheet">
         <link href="../css/brands.min.css" rel="stylesheet">
@@ -41,11 +41,11 @@
                                 <a href="../sop-tier1-soc-onboarding/" class="nav-link">SOP</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Playbooks</a>
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Playbooks</a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="./" class="dropdown-item active" aria-current="page">Suspicious Login</a>
+    <a href="../playbook-suspicious-login/" class="dropdown-item">Suspicious Login</a>
 </li>
                                     
 <li>
@@ -57,11 +57,11 @@
                                 <a href="../style-guide/" class="nav-link">Style Guide</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Examples</a>
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Examples</a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../ticket-note-examples/" class="dropdown-item">Ticket Note Examples</a>
+    <a href="./" class="dropdown-item active" aria-current="page">Ticket Note Examples</a>
 </li>
                                 </ul>
                             </li>
@@ -74,12 +74,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../sop-tier1-soc-onboarding/" class="nav-link">
+                                <a rel="prev" href="../style-guide/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../playbook-mfa-fatigue/" class="nav-link">
+                                <a rel="next" class="nav-link disabled">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -101,41 +101,29 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="1"><a href="#playbook-suspicious-logins-and-impossible-travel" class="nav-link">Playbook: Suspicious Logins and Impossible Travel</a>
+            <li class="nav-item" data-bs-level="1"><a href="#ticket-note-examples-tier-1-soc" class="nav-link">Ticket Note Examples (Tier 1 SOC)</a>
               <ul class="nav flex-column">
             <li class="nav-item" data-bs-level="2"><a href="#purpose" class="nav-link">Purpose</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#when-to-use" class="nav-link">When to Use</a>
+            <li class="nav-item" data-bs-level="2"><a href="#standard-fields" class="nav-link">Standard Fields</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#required-inputs" class="nav-link">Required Inputs</a>
+            <li class="nav-item" data-bs-level="2"><a href="#example-1a-suspicious-login-likely-false-positive" class="nav-link">Example 1A — Suspicious Login (Likely False Positive)</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#data-sources-to-check" class="nav-link">Data Sources to Check</a>
+            <li class="nav-item" data-bs-level="2"><a href="#example-1b-suspicious-login-escalate" class="nav-link">Example 1B — Suspicious Login (Escalate)</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#triage-steps-tier-1" class="nav-link">Triage Steps (Tier 1)</a>
+            <li class="nav-item" data-bs-level="2"><a href="#example-2a-mfa-fatigue-attempted-compromise-user-denied-prompts" class="nav-link">Example 2A — MFA Fatigue (Attempted Compromise; user denied prompts)</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#common-false-positives" class="nav-link">Common False Positives</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="2"><a href="#escalation-criteria" class="nav-link">Escalation Criteria</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="2"><a href="#ticket-note-template-copypaste" class="nav-link">Ticket Note Template (copy/paste)</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="2"><a href="#definition-of-done" class="nav-link">Definition of Done</a>
+            <li class="nav-item" data-bs-level="2"><a href="#example-2b-mfa-fatigue-high-confidence-compromise-user-approved-prompt" class="nav-link">Example 2B — MFA Fatigue (High-confidence compromise; user approved prompt)</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -146,90 +134,103 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="playbook-suspicious-logins-and-impossible-travel">Playbook: Suspicious Logins and Impossible Travel</h1>
+<h1 id="ticket-note-examples-tier-1-soc">Ticket Note Examples (Tier 1 SOC)</h1>
 <h2 id="purpose">Purpose</h2>
-<p>This playbook serves to help Tier 1 analysts quickly validate and respond to alerts indicating suspicious authentication activity (e.g., impossible travel, an unfamiliar location or device, and/or abnormal login patterns).</p>
-<h2 id="when-to-use">When to Use</h2>
-<ul>
-<li><strong>SIEM Alert:</strong> Impossible travel or geo-velocity</li>
-<li><strong>IdP Alert:</strong> Risky sign-in or unfamiliar location</li>
-<li><strong>User Report:</strong> “I received an MFA prompt that I did not approve.”</li>
-<li>Multiple failed logins followed by a success</li>
-</ul>
-<h2 id="required-inputs">Required Inputs</h2>
-<ul>
-<li>Username or UPN</li>
-<li>Timestamp Range (UTC and Local)</li>
-<li>Source IP(s)</li>
-<li>Location (Geo)</li>
-<li>User Agent / Device Info (if available)</li>
-<li>IdP / VPN / Email Platform Involved (Okta/Azure AD/etc.)</li>
-</ul>
-<h2 id="data-sources-to-check">Data Sources to Check</h2>
-<ul>
-<li>IdP Sign-in Logs (risk events, MFA outcomes)</li>
-<li>VPN Logs (if remote access is in scope)</li>
-<li>Endpoint/EDR (if device compromise is suspected)</li>
-<li>Email Logs (if session hijack/phishing is suspected)</li>
-<li>Ticketing System (recent access requests / travel notices / change windows)</li>
-</ul>
-<h2 id="triage-steps-tier-1">Triage Steps (Tier 1)</h2>
-<ol>
-<li>Confirm the alert details (user, IP, geo, time, device).</li>
-<li>Check if the source IP is known/benign (corporate egress, VPN, ISP, known vendor).</li>
-<li>Review sign-in pattern:<ul>
-<li>Failed attempts count</li>
-<li>Success after failures</li>
-<li>MFA result (approved/denied/timed out)</li>
-</ul>
-</li>
-<li>Look for concurrent sign-ins from different geos/devices in a short window.</li>
-<li>Check if the user is traveling or on PTO (ticket notes, travel notice, manager note if available).</li>
-<li>Validate device context (known device? new device registration? unusual user agent?).</li>
-<li>Assess account privilege (admin role, sensitive systems, VIP status).</li>
-<li>If the user reported unexpected MFA, treat that event as higher-confidence suspicious activity.</li>
-<li>If evidence suggests compromise, prepare an escalation with key facts (see Escalation Criteria in the SOP).</li>
-<li>Document actions and evidence in the ticket.</li>
-</ol>
-<h2 id="common-false-positives">Common False Positives</h2>
-<ul>
-<li>Mobile carrier IP geolocation inaccuracies</li>
-<li>Corporate VPN/Proxy egress showing the “wrong” location</li>
-<li>Travel or remote work</li>
-<li>Password manager or background re-authentication (tokens refreshing)</li>
-</ul>
-<h2 id="escalation-criteria">Escalation Criteria</h2>
-<ul>
-<li>Escalate if any of the following apply:<ul>
-<li>Privileged/VIP account</li>
-<li>MFA approved unexpectedly or “push fatigue” suspected</li>
-<li>Success after repeated failures from unfamiliar IP/geo</li>
-<li>Multiple geos/devices concurrently</li>
-<li>You cannot confidently explain the activity after initial checks.</li>
-</ul>
-</li>
-</ul>
-<p>(Reference: SOP “Escalation Criteria (Tier 1 → Tier 2/Lead)”)</p>
-<h2 id="ticket-note-template-copypaste">Ticket Note Template (copy/paste)</h2>
-<p><strong>Alert:</strong><br />
-<strong>User:</strong><br />
+<p>Provide copy/paste-ready examples of Tier 1 investigation notes that are clear, repeatable, and escalation-ready.</p>
+<h2 id="standard-fields">Standard Fields</h2>
+<p><strong>Alert / Report:</strong><br />
+<strong>User / Host:</strong><br />
 <strong>Time Range:</strong><br />
 <strong>Source IP / Geo:</strong><br />
 <strong>Device / User Agent:</strong><br />
-<strong>IdP Outcome (MFA):</strong><br />
 <strong>What I Checked:</strong><br />
 -<br />
 -<br />
-<strong>Findings:</strong><br />
+<strong>Findings (facts):</strong><br />
 -<br />
 -<br />
-<strong>Assessment (TP/FP + confidence level):</strong><br />
-<strong>Recommended Next Action / Escalation:</strong>  </p>
-<h2 id="definition-of-done">Definition of Done</h2>
-<ul>
-<li><strong>Ticket Includes:</strong> alert details, checks performed, evidence summary, and final disposition (closed as FP, contained/escalated).</li>
-<li><strong>If Escalated:</strong> Tier 2 has the minimum required context to continue the investigation without rework.</li>
-</ul></div>
+<strong>Assessment (TP/FP + confidence):</strong><br />
+<strong>Action Taken / Next Step:</strong><br />
+<strong>Escalation (if any):</strong>  </p>
+<hr />
+<h2 id="example-1a-suspicious-login-likely-false-positive">Example 1A — Suspicious Login (Likely False Positive)</h2>
+<p><strong>Alert / Report:</strong> Impossible travel / risky sign-in<br />
+<strong>User / Host:</strong> jdoe@example.com<br />
+<strong>Time Range:</strong> 2026-01-26 13:05–13:20 ET<br />
+<strong>Source IP / Geo:</strong> 198.51.100.10 (Ashburn, VA) → 203.0.113.22 (New York, NY)<br />
+<strong>Device / User Agent:</strong> Known device ID present; Chrome on Windows 11</p>
+<p><strong>What I Checked:</strong>
+- IdP sign-in logs for the user (same time window)
+- MFA outcomes and device context
+- Ticket system for travel/remote work notes
+- Known corporate/VPN egress IP list</p>
+<p><strong>Findings (facts):</strong>
+- Both sign-ins originated from known corporate/VPN egress ranges.
+- MFA was completed successfully using the user’s registered method.
+- Device context matches historical logins (known device; no new device registration).
+- No additional anomalous sign-ins observed in ±2 hours.</p>
+<p><strong>Assessment (TP/FP + confidence):</strong> FP (high). Geo discrepancy consistent with VPN egress routing.<br />
+<strong>Action Taken / Next Step:</strong> Closed as FP. Added note to tune rule to recognize VPN egress ranges if supported.</p>
+<hr />
+<h2 id="example-1b-suspicious-login-escalate">Example 1B — Suspicious Login (Escalate)</h2>
+<p><strong>Alert / Report:</strong> Impossible travel / concurrent sessions<br />
+<strong>User / Host:</strong> jdoe@example.com<br />
+<strong>Time Range:</strong> 2026-01-26 02:10–02:25 ET<br />
+<strong>Source IP / Geo:</strong> 203.0.113.88 (Berlin, DE) and 198.51.100.77 (Chicago, IL) within 6 minutes<br />
+<strong>Device / User Agent:</strong> New user agent observed; device not previously seen</p>
+<p><strong>What I Checked:</strong>
+- IdP sign-in logs (successes/failures, MFA results)
+- Session/concurrent sign-in indicators
+- Recent password reset or access request tickets
+- Privilege level / group membership</p>
+<p><strong>Findings (facts):</strong>
+- Successful sign-in from unfamiliar geo/device preceded by multiple failed attempts.
+- MFA challenges observed; outcome unclear (mixed denies/timeouts).
+- Concurrent activity from two distant geos within minutes.
+- No travel/exception record found in tickets.</p>
+<p><strong>Assessment (TP/FP + confidence):</strong> Suspected TP (medium-high). Pattern consistent with credential compromise attempts.<br />
+<strong>Action Taken / Next Step:</strong> Prepared escalation with evidence summary and recommended containment.<br />
+<strong>Escalation (if any):</strong> Escalated to Tier 2/Lead per SOP Escalation Criteria. Recommended: revoke sessions/refresh tokens, force password reset, review conditional access for geo/device.</p>
+<hr />
+<h2 id="example-2a-mfa-fatigue-attempted-compromise-user-denied-prompts">Example 2A — MFA Fatigue (Attempted Compromise; user denied prompts)</h2>
+<p><strong>Alert / Report:</strong> User report: repeated MFA prompts not initiated<br />
+<strong>User / Host:</strong> jsmith@example.com<br />
+<strong>Time Range:</strong> 2026-01-26 18:40–19:05 ET<br />
+<strong>Source IP / Geo:</strong> 192.0.2.44 (unknown ISP, out-of-state)<br />
+<strong>Device / User Agent:</strong> New device; mobile push prompts</p>
+<p><strong>What I Checked:</strong>
+- IdP sign-in/MFA challenge events (counts and outcomes)
+- Source IP reputation/internal allowlists
+- Concurrent sign-ins and follow-on success events
+- Privilege level (admin/VIP) indicators</p>
+<p><strong>Findings (facts):</strong>
+- 17 MFA push prompts generated in 25 minutes.
+- User reports denying/ignoring prompts; no explicit approval reported.
+- Multiple failed sign-in attempts; no confirmed successful sign-in observed.
+- Source IP not in known corporate/VPN egress list.</p>
+<p><strong>Assessment (TP/FP + confidence):</strong> Likely attempted compromise (medium). Push fatigue pattern present; success not confirmed.<br />
+<strong>Action Taken / Next Step:</strong> Escalated with evidence and recommended protective steps.<br />
+<strong>Escalation (if any):</strong> Escalated to Tier 2/Lead. Recommended: password reset, enforce phishing-resistant MFA if available, block source IP/geo if policy allows, monitor for follow-on attempts.</p>
+<hr />
+<h2 id="example-2b-mfa-fatigue-high-confidence-compromise-user-approved-prompt">Example 2B — MFA Fatigue (High-confidence compromise; user approved prompt)</h2>
+<p><strong>Alert / Report:</strong> User report: approved an MFA prompt by mistake<br />
+<strong>User / Host:</strong> jsmith@example.com<br />
+<strong>Time Range:</strong> 2026-01-26 09:10–09:25 ET<br />
+<strong>Source IP / Geo:</strong> 203.0.113.19 (unfamiliar geo)<br />
+<strong>Device / User Agent:</strong> New device; browser sign-in</p>
+<p><strong>What I Checked:</strong>
+- IdP sign-in logs for successful sign-in and session creation
+- MFA outcomes and device registration changes
+- Any mailbox/email rule creation indicators (if applicable)
+- Privilege level and access scope</p>
+<p><strong>Findings (facts):</strong>
+- User approved an unexpected MFA prompt.
+- Successful sign-in recorded from unfamiliar IP/geo immediately after approval.
+- New session established; additional access attempts observed shortly after.
+- No change window or travel exception documented.</p>
+<p><strong>Assessment (TP/FP + confidence):</strong> High-confidence compromise risk (high).<br />
+<strong>Action Taken / Next Step:</strong> Immediate escalation and containment recommendation.<br />
+<strong>Escalation (if any):</strong> Escalated to Tier 2/Lead. Recommended: revoke sessions, force password reset, re-register MFA, check for persistence (rules/forwarding), and evaluate account disable per policy.</p></div>
             </div>
         </div>
 
