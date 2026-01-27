@@ -6,6 +6,7 @@ nav:
   - Playbooks: 
       - Suspicious Login: playbook-suspicious-login.md
       - MFA Fatigue: playbook-mfa-fatigue.md
+      - Malware/EDR Triage: playbook-malware-edr-triage.md
   - Style Guide: style-guide.md
   - Examples: 
       - Ticket Note Examples: ticket-note-examples.md
