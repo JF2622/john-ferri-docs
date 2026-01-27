@@ -3,10 +3,10 @@
 For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
 ## Portfolio Overview
-This repository demonstrates my ability to create and maintain operational documentation for a Security Operations Center (SOC) using a modern Docs-as-Code workflow.
+This repository demonstrates my ability to create and maintain operational documentation for a Security Operations Center (SOC) using a modern Docs-as-Code workflow. While these examples explicitly mention government Security Operations Center (SOC) environments, the documentation workflow and standards in this repository also translate directly to internal product and security documentation efforts across the private sector. 
 
 ## What This Repository Demonstrates
-- SOC technical writing (SOP + playbooks)
+- SOC technical writing (SOPs + playbooks)
 - Clear, actionable triage steps and escalation criteria
 - MkDocs site structure and publishing via GitHub Pages
 - Git workflow: feature branches, pull requests, and iterative updates

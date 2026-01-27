@@ -1,5 +1,5 @@
 ﻿John Ferri - Docs-as-Code Portfolio
-This is a Docs-as-Code professional portfolio project, incorporating MkDocs, Markdown, a Git pull request (PR) workflow, and a page on GitHub Pages. While these examples explicitly mention government Security Operations Center (SOC) environments, the documentation workflow and standards in this repository also translate directly to internal product and security documentation efforts in the private sector. 
+This is a Docs-as-Code professional portfolio project, incorporating MkDocs, Markdown, a Git pull request (PR) workflow, and a page on GitHub Pages. While these examples explicitly mention government Security Operations Center (SOC) environments, the documentation workflow and standards in this repository also translate directly to internal product and security documentation efforts across the private sector. 
 
 
 

@@ -7,3 +7,5 @@ nav:
       - Suspicious Login: playbook-suspicious-login.md
       - MFA Fatigue: playbook-mfa-fatigue.md
   - Style Guide: style-guide.md
+  - Examples: 
+      - Ticket Note Examples: ticket-note-examples.md
